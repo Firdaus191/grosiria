@@ -1,66 +1,13 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
-
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
-
-## About Laravel
-
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
-
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
-
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
-
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+🛒 Grosiria - E-Grocery, Customer Loyalty & Omnichannel RetailGrosiria adalah aplikasi web manajemen e-grocery berbasis sistem omnichannel yang memungkinkan pelanggan berbelanja secara daring dengan opsi pengiriman (Delivery) atau pengambilan mandiri di toko (Pickup Kasir). Proyek ini dirancang secara arsitektural untuk memenuhi standar evaluasi UTS - Pengujian Endpoint T08.Aplikasi ini dilengkapi dengan G-Poin Loyalty System, mesin rekomendasi statis (Static Recommendation Engine), serta Dasbor Admin interaktif (real-time polling) yang mematuhi standar pembagian wilayah kerja (Git Flow).🚀 Arsitektur & Spesifikasi TeknologiProyek ini dibangun menggunakan stack teknologi modern dengan pembagian entitas bisnis yang ketat sesuai dengan ERD Grosiria (13 Tabel) & Modul Git Flow:Core Framework: Laravel 11.x (PHP 8.2+)Admin Back-Office: FilamentPHP v5 (Mendukung lokalisasi Rupiah/IDR secara global)API Authentication: Laravel Sanctum (Stateful Cookie & Token-based)Database: MySQL (Relasi ketat dengan CASCADE dan RESTRICT via Migration)Mock Payment Gateway: Midtrans Sandbox (Simulasi Webhook)Frontend UI: Tailwind CSS, Alpine.js, & Swiper.js (Proses Slicing)🎯 Fitur Inti Berdasarkan Swimlane FlowchartOmnichannel Fulfillment:Pickup: Pelanggan mendapatkan pickup_code (PIN) unik saat checkout yang tervalidasi langsung oleh Kasir di dasbor admin.Delivery: Integrasi status pesanan dari pending_payment hingga on_delivery.Loyalty System & Voucher Marketplace:Mekanisme transaksi poin (earn dan redeem) yang dilindungi menggunakan DB::transaction() untuk mencegah in-konsistensi data (Race Conditions).Real-Time Admin Dashboard:Widget polling otomatis memantau omzet, antrean pesanan, peringatan stok menipis (< 20 pcs), dan sirkulasi G-Poin tanpa membebani server (Optimasi Eager Loading).Robust API Endpoint (T08 UTS Validation):Endpoint /api/v1/users dilindungi oleh Rate Limiter (60 request/menit).Menjamin balasan struktur JSON mutlak untuk seluruh skenario pengujian: HTTP 200 OK (Sukses), 404 Not Found (Typo URL), 405 Method Not Allowed (Salah HTTP Method), dan 500 Internal Server Error (Koneksi DB Terputus).🛠 Panduan Instalasi Lokal (Setup Environment)Bagi anggota tim pengembang atau dosen penguji yang ingin menjalankan aplikasi Grosiria di komputer lokal (Laragon/XAMPP), ikuti langkah-langkah standar berikut:1. Kloning Repositorigit clone https://github.com/Firdaus191/grosiria.git
+cd grosiria
+2. Instalasi Dependensi & Konfigurasicomposer install
+cp .env.example .env
+php artisan key:generate
+3. Konfigurasi Basis Data (.env)Pastikan Laragon/MySQL berjalan, lalu buat database kosong bernama db_grosiria. Buka file .env dan pastikan konfigurasi berikut aktif untuk mencegah crash saat simulasi server mati (TC-05):DB_CONNECTION=mysql
+DB_DATABASE=db_grosiria
+SESSION_DRIVER=file
+CACHE_STORE=file
+4. Eksekusi Skema Database & Data Awal (Seeder)Perintah ini akan membangun 13 tabel relasional dan menyuntikkan data uji (termasuk 3 tipe user, 14 kategori, 16 produk, dan sampel pesanan Omnichannel).php artisan migrate:fresh --seed
+5. Jalankan Serverphp artisan optimize:clear
+php artisan serve
+Akses Panel Admin di http://127.0.0.1:8000/admin menggunakan:Email: admin@grosiria.testPassword: password123🧪 Skenario Pengujian Endpoint (T08 UTS)Sesuai dengan lampiran T08 - Pengujian Endpoint UTS.xlsx, lakukan pengujian berikut menggunakan aplikasi Postman pada endpoint GET http://127.0.0.1:8000/api/v1/users dengan header Accept: application/json:ID TestKondisi SkenarioEkspektasi Status HTTPTC-01Mengambil data saat tabel users terisi200 OK (JSON Array)TC-02Mengambil data saat tabel users kosong200 OK (JSON Empty Array)TC-03Typo URL (Misal: /api/v1/userr)404 Not Found (JSON Error)TC-04Menggunakan method POST dengan body {}405 Method Not Allowed (JSON Error)TC-05Service MySQL dimatikan secara paksa500 Internal Server Error (JSON Error)📁 Dokumentasi Arsitektur (Single Source of Truth)Seluruh artefak akademik dan panduan rekayasa perangkat lunak tim tersimpan secara rapi pada direktori /docs/:Skema Database & ERD (schema_grosiria.sql & erd_grosiria_final.jpg)Swimlane Flowchart (flowchart_grosiria.jpg)Prototipe UI/UX (ui_grosiria.html)SOP Git Flow & Pull Request (Panduan Kolaborasi Tim Edisi PDF)
